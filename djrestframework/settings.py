@@ -28,14 +28,14 @@ SECRET_KEY = os.environ.get('SECRET_KEY',default="You forgot to set SECRET_KEY e
 DEBUG = 'RENDER' not in os.environ
 
 ALLOWED_HOSTS = []
-RENDER_EXTERNAL_HOST = os.environ.get('RENDER_EXTERNAL_HOST',default="http://127.0.0.1:8000/")
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 
 if DEBUG:
     ALLOWED_HOSTS.append('localhost')
     ALLOWED_HOSTS.append('127.0.0.1')
 
-if RENDER_EXTERNAL_HOST:
-    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOST)
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 # Application definition
     # need 
